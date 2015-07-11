@@ -1,4 +1,21 @@
+
+body{
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	font-size: 150px !important;
+}
+
+p{
+	font-size: 12px;
+	color: #666;
+}
+
 .content-container{
+	margin: 0 auto;
 	max-width: 1150px;
 	width: 100%;
 }
@@ -19,13 +36,20 @@
 	text-align: center;
 }
 
+.how-we-work {
+	border-bottom: 1px solid red;
+	font-weight: lighter;
+}
 md-tabs-canvas {
 	min-height: 80px;
 }
 
 .main-container{
-	background-color: #fafafa;
+	background-color: rgba(238, 238, 238, 1);
+	display: inline-table;
+  	width: 100%;
 }
+
 .calc-container {
 	max-height: 400px;
 	min-height: 400px;
@@ -38,6 +62,26 @@ md-tabs-canvas {
 
 .steps-container{
 	margin-top: 50px;
+
+	.step{
+		width: 100%;
+		margin: 20px 20px;
+		max-width: 520px;
+		min-height: 250px;
+
+	}
+	
+	.steps-container_step {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.costs-container {
+	
+	margin-top: 80px; 
+	height: 400px;
+	border-top: 5px dashed #E7E7E7;
 }
 
 //modifiers
