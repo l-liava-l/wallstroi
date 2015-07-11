@@ -13,7 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "0.10.0",
+    "angular-material": "~0.10.0",
     "material-design-icons": "~1.0.1"
   }
 }

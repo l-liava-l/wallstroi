@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="global" >
 	<head>
-		<meta charset="utf-8">
-		<title>wallstroi.ru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="плитка, укладка плитки, плиточник, в сочи, уложить, положить, тротуарная плитка, керамогранит, кафель, мозаика, облицовка">
+    <meta name="description" content="Профессиональная укладка тротуарной плитки, керамической плитки (кафель), керамогранита, мозаики, клинкера и др. в Сочи">
+    <meta name="yandex-verification" content="40f95f3215db3b6c">
+    <title>Плиточные работы в Сочи.</title>
 	    <link rel="stylesheet" type="text/css" href="vendor.css">  
 	    <link rel="stylesheet" type="text/css" href="global.css">
 		<script type="text/javascript" src="vendor.js"></script>
 	    <script type="text/javascript" src="global.js"></script>
 	</head>
-	<body layout="column" layout-fill>
+	<body layout="column" layout-fill ng-cloack>
 		<md-toolbar class="md-primary fixed" layout="row" layout-align="center center">
 			<div class="content-container" layout="row" layout-margin flex>
 				<span flex="30">Извольте-съ позвонить нам!</span>
@@ -25,28 +29,27 @@
 			</div>
 		</div>
 		<div ng-controller="MainCtrl as main" class="main-container">
-			<div class="content-container">
+			<div class="content-container" ng-show="!main.show">
 				<div layout="row" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
-						<span style="font-size: 22px">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
-						</br></br>
+						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
 						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы расчитать примерную цену услуги </span>
 					</div>
 					<md-card class="calc-container" layout="column" layout-align="center start" flex>
-						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect md-dynamic-height layout="row">
+						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect layout="row" style="width: 100%;">
 			                <md-tab flex>
-			                    <span class="md-title">Укладка плитки</span></br>
-			                    <span>Кафель, керамогранит, котто</span>
+			                    <span class="md-title" style="font-size: 16px; font-weight: bold;">Укладка плитки</span></br>
+			                    <span style="font-size: 14px; text-transform: capitalize;">Кафель, керамогранит, котто</span>
 			                </md-tab>
 			                
-			                <md-tab flex>
-			                    <span class="md-title">Укладка мозаики</span></br>
-			                    <span>Любой сложности</span>
-			                </md-tab>
+			                <!--md-tab flex>
+			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Укладка мозаики</span></br>
+			                    <span style="font-size: 14px; text-transform: capitalize;">Любой сложности</span>
+			                </md-tab-->
 
 			                <md-tab flex>
-			                    <span class="md-title">Тротуарная плитка</span></br>
-			                    <span>Клинкер и бордюры</span>
+			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Тротуарная плитка</span></br>
+			                    <span style="font-size: 14px; text-transform: capitalize;">Клинкер и бордюры</span>
 			                </md-tab>
 			            </md-tabs>
 			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
@@ -56,8 +59,8 @@
 									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
 								</md-select>
 								<md-input-container style="width: 372px; margin-top: 0;">
-									<label>Площадь поверхности в квадратных метрах</label>
-									<input ng-model="vm.placeSize" type="number">
+									<label>Площадь поверхности (кв.м)</label>
+									<input ng-model="vm.placeSize" style="width: 372px;" type="number">
 								</md-input-container>
 								<md-checkbox ng-model="vm.diagonal" style="width: 372px;  margin-top: 5px;">
 						         	Укладка по диагонали
@@ -88,71 +91,74 @@
 				</div>
 			</div>
 
-			<div layout="row" class="costs-container" layout-align="center center">
-				<div class="content-container" layout="row">
+			<div ng-show="!main.show" layout="row" class="costs-container" layout-align="center center">
+				<div class="content-container" layout="row" layout-align="center center">
+					<div flex="50" layout="row" style="border-right: 5px solid #E0E0E0;   height: 200px;" layout-align="center center">
+						<md-icon style="width: 100px; height: 100px" md-svg-icon="img/icons/ic_looks_one_24px.svg"></md-icon>
+					</div>
 					<md-whiteframe class="step" layout-padding flex="50">
-					<h3>Укладка плитки в Сочи.</h3>
-                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
-                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
-                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
-                    <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
-                    <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
+						<h3>Укладка плитки в Сочи.</h3>
+	                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
+	                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
+	                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
+	                    <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
+	                    <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
                     </md-whiteframe>
-                    <div flex="50" layout="row" layout-align="center center">
-                    	
-                    </div>
 				</div>
 			</div>
+			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
+					<div class="content-container" layout="row">
+						<div flex="50" layout="row" style="border-right: 5px solid #E0E0E0;" layout-align="center center">
+							<md-icon style="width: 100px; height: 100px" md-svg-icon="img/icons/ic_looks_two_24px.svg"></md-icon>
+						</div>
+						<md-whiteframe class="step" layout-padding>
+							<h3>Осматриваем помещение</h3>
+		                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
+		                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
+		                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
+		                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
+		                </md-whiteframe>
+					</div>
+				</div>
 
-			<md-button ng-click="show = !show" style="width: 100%;">
-				<span style="border-bottom: 1px solid red; text-transform: none">Как мы работаем?</span>
-				<md-icon ng-if="!show" style="width: 15px" md-svg-icon="img/icons/ic_expand_more_24px.svg"></md-icon>
-				<md-icon ng-if="show" style="width: 15px" md-svg-icon="img/icons/ic_expand_less_24px.svg"></md-icon>
-			</md-button>
-
-			<div ng-show="show">
 				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-				<div class="content-container" layout="row">
-					<md-whiteframe class="step" layout-padding>
-						<h3>Осматриваем помещение</h3>
-	                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
-	                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
-	                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
-	                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
-                    </md-whiteframe>
+					<div class="content-container" layout="row">
+						<div flex="50" layout="row" style="border-right: 5px solid #E0E0E0;" layout-align="center center">
+							<md-icon style="width: 100px; height: 100px" md-svg-icon="img/icons/ic_looks_3_24px.svg"></md-icon>
+						</div>
+						<md-whiteframe class="step" layout-padding>
+							<h3>Приобретаем материалы</h3>
+							<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
+							<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
+							<p>Выбрать качественную плитку Вам всегда помогут наши консультанты, которые предложат идеальный вариант.</p>
+							<p>Оплата приобретенного товара производится заранее и отдельно от общих работ.</p>
+							<p>Также мы с радостью кладем уже приобретенные Вами изделия</p>
+		                </md-whiteframe>
+					</div>
 				</div>
+
+				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
+					<div class="content-container" layout="row">
+						<div flex="50" layout="row" style="border-right: 5px solid #E0E0E0;" layout-align="center center">
+							<md-icon style="width: 100px; height: 100px" md-svg-icon="img/icons/ic_looks_4_24px.svg"></md-icon>
+						</div>
+						<md-whiteframe class="step" layout-padding>
+							<h3> Укладываем плитку </h3>       
+							<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
+							<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
+							<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
+							<p>Расчет выполняется после оказания всех услуг плиточника по зафиксированному на этапе осмотра тарифу.</p>
+							<p>В случае возникновения непредвиденных обстоятельств, вы получите скидку до 30% на их устранение.</p>
+		                </md-whiteframe>
+					</div>
+				</div>
+				<div layout="row" layout-align="center center" style="height: 200px; background: #E2E2E2">
+			   
+			</div>
 			</div>
 
-			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-				<div class="content-container" layout="row">
-					<md-whiteframe class="step" layout-padding>
-						<h3>Приобретаем материалы</h3>
-						<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
-						<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
-						<p>Выбрать качественную плитку Вам всегда помогут наши консультанты, которые предложат идеальный вариант.</p>
-						<p>Оплата приобретенного товара производится заранее и отдельно от общих работ.</p>
-						<p>Также мы с радостью кладем уже приобретенные Вами изделия</p>
-                    </md-whiteframe>
-				</div>
-			</div>
 
-			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-				<div class="content-container" layout="row">
-					<md-whiteframe class="step" layout-padding>
-						<h3> Укладываем плитку </h3>       
-						<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
-						<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
-						<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
-						<p>Расчет выполняется после оказания всех услуг плиточника по зафиксированному на этапе осмотра тарифу.</p>
-						<p>В случае возникновения непредвиденных обстоятельств, вы получите скидку до 30% на их устранение.</p>
-                    </md-whiteframe>
-				</div>
-			</div>
-			</div>
-			<div style="background-color: rgba(0, 0, 0, 1); color: #fff; font-weight: 900;" 
-				 layout="row" layout-align="center center" layout-padding flex>
-				wallstroi.ru - 2015
-			</div>
+			
 		</div>
 	</body>	
 </html>
