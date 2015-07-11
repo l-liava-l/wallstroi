@@ -14,7 +14,6 @@
   ],
   "dependencies": {
     "angular-material": "0.10.0",
-    "material-design-icons": "~1.0.1",
-    "livereload": "~2.2.1"
+    "material-design-icons": "~1.0.1"
   }
 }
