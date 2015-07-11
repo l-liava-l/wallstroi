@@ -1,0 +1,2 @@
+angular.module('global', ['ngMaterial']);
+    
