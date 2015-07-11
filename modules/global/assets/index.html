@@ -32,7 +32,7 @@
 						</br></br>
 						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы расчитать примерную цену услуги </span>
 					</div>
-					<md-card class="calc-container" layout="row" layout-align="center start" flex>
+					<md-card class="calc-container" layout="column" layout-align="center start" flex>
 						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect md-dynamic-height layout="row">
 			                <md-tab flex>
 			                    <span class="md-title">Укладка плитки</span></br>
@@ -49,6 +49,41 @@
 			                    <span>Клинкер и бордюры</span>
 			                </md-tab>
 			            </md-tabs>
+			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
+			            	<div flex style="padding-left: 50px;">
+			            		<md-select ng-model="vm.size" style="width: 372px; margin-top: 5px; padding-bottom: 10px;">
+									<md-select-label style="width: 372px;">{{ vm.size || 'Выберите размер плитки (мм)' }}</md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+								</md-select>
+								<md-input-container style="width: 372px; margin-top: 0;">
+									<label>Площадь поверхности в квадратных метрах</label>
+									<input ng-model="vm.placeSize" type="number">
+								</md-input-container>
+								<md-checkbox ng-model="vm.diagonal" style="width: 372px;  margin-top: 5px;">
+						         	Укладка по диагонали
+						        </md-checkbox>
+						        <div layout="row" style="margin-left: 5px;">
+						        	<div layout="row" layout-align="center center">
+						        		<span class="place-type_span" ng-class="{active: !vm.placeType}">Пол</span>
+						        	</div>
+						        	<md-switch ng-model="vm.placeType"></md-switch>
+						        	<div layout="row" layout-align="center center">
+						        		<span class="place-type_span" ng-class="{active: vm.placeType}">Стена</span>
+						        	</div>
+						        </div>								
+			            	</div>
+			            	<div layout="row" layout-align="center center" flex>
+								<span style="font-size: 56px;">
+									= {{9400}}<span style="font-size: 22px;">руб</span>
+								</span>
+			            	</div>
+			            </div>
+			            <div ng-if="main.currentType === 1" style="width: 100%" layout="row" layout-align="center center" flex>
+				        	<span style="text-align: center" flex>Ждемс</span>
+			            </div>
+			            <div ng-if="main.currentType === 2" style="width: 100%" layout="row" layout-align="center center" flex>
+				        	<span style="text-align: center" flex>Ждемс</span>
+			            </div>
 					</md-card>
 				</div>
 			</div>
@@ -63,7 +98,7 @@
                     <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
                     <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
                     </md-whiteframe>
-                    <div flex="50">
+                    <div flex="50" layout="row" layout-align="center center">
                     	
                     </div>
 				</div>
