@@ -33,7 +33,7 @@
 				<div layout="row" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
 						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
-						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы расчитать примерную цену услуги </span>
+						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы рассчитать примерную цену услуги </span>
 					</div>
 					<md-card class="calc-container" layout="column" layout-align="center start" flex>
 						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect layout="row" style="width: 100%;">
@@ -49,7 +49,7 @@
 
 			                <md-tab flex>
 			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Тротуарная плитка</span></br>
-			                    <span style="font-size: 14px; text-transform: capitalize;">Клинкер и бордюры</span>
+			                    <span style="font-size: 14px; text-transform: normal;">Кладем в любых объемах</span>
 			                </md-tab>
 			            </md-tabs>
 			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
@@ -81,11 +81,28 @@
 								</span>
 			            	</div>
 			            </div>
-			            <div ng-if="main.currentType === 1" style="width: 100%" layout="row" layout-align="center center" flex>
-				        	<span style="text-align: center" flex>Ждемс</span>
-			            </div>
-			            <div ng-if="main.currentType === 2" style="width: 100%" layout="row" layout-align="center center" flex>
-				        	<span style="text-align: center" flex>Ждемс</span>
+			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
+			            	<div flex style="padding-left: 50px;">
+			            		<md-select ng-model="vm.size" style="width: 372px; margin-top: 5px; padding-bottom: 10px;">
+									<md-select-label style="width: 372px;">{{ vm.size || 'Выберите тип плитки (мм)' }}</md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+								</md-select>
+								<md-input-container style="width: 372px; margin-top: 0;">
+									<label>Площадь поверхности (кв.м)</label>
+									<input ng-model="vm.placeSize" style="width: 372px;" type="number">
+								</md-input-container>
+								<md-checkbox ng-model="vm.badPlace" style="width: 372px;  margin-top: 5px;">
+						         	Выравнивание поверхности
+						        </md-checkbox>
+						        <md-checkbox ng-model="vm.rmOld" style="width: 372px;  margin-top: 5px;">
+						         	Удаление старой плитки
+						        </md-checkbox>		
+			            	</div>
+			            	<div layout="row" layout-align="center center" flex>
+								<span style="font-size: 56px;">
+									= {{12540}}<span style="font-size: 22px;">руб</span>
+								</span>
+			            	</div>
 			            </div>
 					</md-card>
 				</div>
