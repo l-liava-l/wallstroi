@@ -29,8 +29,8 @@
 			</div>
 		</div>
 		<div ng-controller="MainCtrl as main" class="main-container">
-			<div  hide-sm class="content-container" ng-show="!main.show">
-				<div layout="row" style="margin-top: 45px">
+			<div class="content-container" layout-align="center center" ng-show="!main.show">
+				<div layout-sm="column" layout-md="column" layout-lg="column" layout="row" layout-align="center center" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
 						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
 						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы рассчитать примерную цену услуги </span>
@@ -38,8 +38,9 @@
 					<md-card class="calc-container" layout="column" layout-align="center start" flex>
 						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect layout="row" style="width: 100%;">
 			                <md-tab flex>
-			                    <span class="md-title" style="font-size: 16px; font-weight: bold;">Укладка плитки</span></br>
-			                    <span style="font-size: 14px; text-transform: capitalize;">Кафель, керамогранит, котто</span>
+			                    <span hide-sm class="md-title" style="font-size: 16px; font-weight: bold;">Укладка плитки</span>
+								<span show-sm class="md-title" style="font-size: 16px; font-weight: bold;">Помещение</span><br hide-sm>
+			                    <span hide-sm style="font-size: 14px; text-transform: capitalize;">Кафель, керамогранит, котто</span>
 			                </md-tab>
 
 			                <!--md-tab flex>
@@ -48,21 +49,22 @@
 			                </md-tab-->
 
 			                <md-tab flex>
-			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Тротуарная плитка</span></br>
-			                    <span style="font-size: 14px; text-transform: normal;">Кладем в любых объемах</span>
+			                    <span hide-sm class="md-title"  style="font-size: 16px; font-weight: bold;">Тротуарная плитка</span>
+								<span show-sm class="md-title" style="font-size: 16px; font-weight: bold;">Улица</span><br hide-sm>
+			                    <span hide-sm style="font-size: 14px; text-transform: normal;">Кладем в любых объемах</span>
 			                </md-tab>
 			            </md-tabs>
-			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
-			            	<div flex style="padding-left: 50px;">
-			            		<md-select ng-model="vm.size" style="width: 372px; margin-top: 5px; padding-bottom: 10px;">
-									<md-select-label style="width: 372px;">{{ vm.size || 'Выберите размер плитки (мм)' }}</md-select-label>
+			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
+			            	<div flex class="calc-padding-block" style="padding-left: 50px;" layout-fill>
+			            		<md-select class="input-container" ng-model="vm.size" style="margin-top: 5px; padding-bottom: 10px; width: 100%;">
+									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите размер плитки (мм)' }}</md-select-label>
 									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
 								</md-select>
-								<md-input-container style="width: 372px; margin-top: 0;">
+								<md-input-container  class="input-container" style="margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
-									<input ng-model="vm.placeSize" style="width: 372px;" type="number">
+									<input ng-model="vm.placeSize" style="" type="number">
 								</md-input-container>
-								<md-checkbox ng-model="vm.diagonal" style="width: 372px;  margin-top: 5px;">
+								<md-checkbox class="input-container" ng-model="vm.diagonal" style="margin-top: 5px;">
 						         	Укладка по диагонали
 						        </md-checkbox>
 						        <div layout="row" style="margin-left: 5px;">
@@ -77,30 +79,30 @@
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									= {{9400}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span> {{9400}}<span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
-			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%"  layout="row" layout-padding flex>
-			            	<div flex style="padding-left: 50px;">
-			            		<md-select ng-model="vm.size" style="width: 372px; margin-top: 5px; padding-bottom: 10px;">
-									<md-select-label style="width: 372px;">{{ vm.size || 'Выберите тип плитки (мм)' }}</md-select-label>
+			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
+			            	<div flex class="calc-padding-block" style="padding-left: 50px;">
+			            		<md-select class="input-container" ng-model="vm.size" style=" margin-top: 5px; padding-bottom: 10px;">
+									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите тип плитки (мм)' }}</md-select-label>
 									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
 								</md-select>
-								<md-input-container style="width: 372px; margin-top: 0;">
+								<md-input-container class="input-container" style=" margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
-									<input ng-model="vm.placeSize" style="width: 372px;" type="number">
+									<input ng-model="vm.placeSize" style="" type="number">
 								</md-input-container>
-								<md-checkbox ng-model="vm.badPlace" style="width: 372px;  margin-top: 5px;">
+								<md-checkbox class="input-container" ng-model="vm.badPlace" style="  margin-top: 5px;">
 						         	Выравнивание поверхности
 						        </md-checkbox>
-						        <md-checkbox ng-model="vm.rmOld" style="width: 372px;  margin-top: 5px;">
+						        <md-checkbox class="input-container" ng-model="vm.rmOld" style="  margin-top: 5px;">
 						         	Удаление старой плитки
 						        </md-checkbox>
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									= {{12540}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span> {{12540}}<span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
@@ -123,7 +125,7 @@
                     </md-whiteframe>
 				</div>
 			</div>
-			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+			<div layout="row" class="costs-container" style="border: 0; margin-top: 0;" layout-align="center center">
 					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
 						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
 							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
@@ -138,7 +140,7 @@
 					</div>
 				</div>
 
-				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+				<div layout="row" class="costs-container" style="border: 0; margin-top: 0;" layout-align="center center">
 					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
 						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
 							<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 340px; height: 200px ">
@@ -154,7 +156,7 @@
 					</div>
 				</div>
 
-				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+				<div layout="row" class="costs-container" style="border: 0;  margin-top: 0;" layout-align="center center">
 					<div class="content-container" class="img-container" layout-sm="column" layout="row" layout-align="center center">
 						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
 							<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 340px; height: 200px ">
