@@ -51,6 +51,26 @@ h1{
 	font-size: 150px !important;
 }
 
+@media screen and (max-width: 768px) {
+    h1{
+    	font-size: 100px !important;
+    }
+
+    .md-display-3{
+        font-size: 28px !important;
+    }
+
+    .tel-span{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .md-display-3{
+        font-size: 25px !important;
+    }
+}
+
 h3 {
   font-size: 1.17em;
   color: #5E5D5D
@@ -63,6 +83,10 @@ p{
 	font-family: 'arian_amuregular';
 	font-size: 13px;
 	line-height: 17px;
+}
+
+.tel-span{
+	text-align: center;
 }
 
 .content-container{
@@ -83,9 +107,6 @@ p{
 	color: rgba(244, 67, 54, 1);
 }
 
-.tel-span{
-	text-align: center;
-}
 
 .how-we-work {
 	border-bottom: 1px solid red;
@@ -136,7 +157,7 @@ md-tabs-canvas.md-center-tabs .md-tab {
 		min-height: 250px;
 
 	}
-	
+
 	.steps-container_step {
 		width: 100px;
 		height: 100px;
@@ -144,10 +165,14 @@ md-tabs-canvas.md-center-tabs .md-tab {
 }
 
 .costs-container {
-	
-	margin-top: 80px; 
+
+	margin-top: 80px;
 	height: 400px;
 	border-top: 5px dashed #d8d8d8;
+}
+
+.toolbar{
+    max-width: 100%;
 }
 
 //modifiers
@@ -172,7 +197,7 @@ md-input-container, md-select{
 	* {
 		border-color: rgba(224, 224, 224, 1) !important;
 	}
-	
+
 	&.md-input-focused label {
 		color: rgba(189, 189, 189, 1) !important;
 	}

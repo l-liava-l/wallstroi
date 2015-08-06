@@ -3,20 +3,20 @@
 	<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="плитка, укладка плитки, плиточник, в сочи, уложить, положить, тротуарная плитка, керамогранит, кафель, мозаика, облицовка">
+    <meta name="keywords" content="плитка, укладка плитки, кафельщик, плиточник, в сочи, уложить, положить, тротуарная плитка, керамогранит, кафель, мозаика, облицовка">
     <meta name="description" content="Профессиональная укладка тротуарной плитки, керамической плитки (кафель), керамогранита, мозаики, клинкера и др. в Сочи">
     <meta name="yandex-verification" content="40f95f3215db3b6c">
     <title>Плиточные работы в Сочи.</title>
-	    <link rel="stylesheet" type="text/css" href="vendor.css">  
+	    <link rel="stylesheet" type="text/css" href="vendor.css">
 	    <link rel="stylesheet" type="text/css" href="global.css">
 		<script type="text/javascript" src="vendor.js"></script>
 	    <script type="text/javascript" src="global.js"></script>
 	</head>
 	<body layout="column" layout-fill ng-cloack>
-		<md-toolbar class="md-primary fixed" layout="row" layout-align="center center">
+		<md-toolbar class="md-primary fixed toolbar" layout="row" layout-align="center center">
 			<div class="content-container" layout="row" layout-margin flex>
-				<span flex="25">Позвоните нам!</span>
-				<span class="tel-span" flex>8(967) 646-53-75</span>
+				<span hide-md hide-sm flex="25">Позвоните нам!</span>
+				<span hide-sm class="tel-span" flex>8(967) 646-53-75</span>
 				<span class="tel-span" flex>8(988) 641-13-74</span>
 				<span class="tel-span" flex>8(918) 332-13-74</span>
 			</div>
@@ -28,7 +28,7 @@
 				<md-icon class="attractor" md-svg-icon="img/icons/ic_expand_more_24px.svg"></md-icon>
 			</div>
 		</div>
-		<div ng-controller="MainCtrl as main" class="main-container">
+		<div hide-sm ng-controller="MainCtrl as main" class="main-container">
 			<div class="content-container" ng-show="!main.show">
 				<div layout="row" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
@@ -41,7 +41,7 @@
 			                    <span class="md-title" style="font-size: 16px; font-weight: bold;">Укладка плитки</span></br>
 			                    <span style="font-size: 14px; text-transform: capitalize;">Кафель, керамогранит, котто</span>
 			                </md-tab>
-			                
+
 			                <!--md-tab flex>
 			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Укладка мозаики</span></br>
 			                    <span style="font-size: 14px; text-transform: capitalize;">Любой сложности</span>
@@ -73,7 +73,7 @@
 						        	<div layout="row" layout-align="center center">
 						        		<span class="place-type_span" ng-class="{active: vm.placeType}">Стена</span>
 						        	</div>
-						        </div>								
+						        </div>
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
@@ -96,7 +96,7 @@
 						        </md-checkbox>
 						        <md-checkbox ng-model="vm.rmOld" style="width: 372px;  margin-top: 5px;">
 						         	Удаление старой плитки
-						        </md-checkbox>		
+						        </md-checkbox>
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
@@ -111,7 +111,7 @@
 			<div ng-show="!main.show" layout="row" class="costs-container" layout-align="center center">
 				<div class="content-container" layout="row" layout-align="center center">
 					<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;   height: 200px;" layout-align="center center">
-						<img src="img/company.png" style="width: 300px; height: 230px ">
+						<img alt="Кафельщики" src="img/company.png" style="width: 300px; height: 230px ">
 					</div>
 					<md-whiteframe class="step" layout-padding flex>
 						<h3>Укладка плитки в Сочи.</h3>
@@ -126,7 +126,7 @@
 			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
 					<div class="content-container" layout="row">
 						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img src="img/roulette.png" style="width: 340px; height: 200px ">
+							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" style="width: 340px; height: 200px ">
 						</div>
 						<md-whiteframe class="step" layout-padding>
 							<h3>Осматриваем помещение</h3>
@@ -141,7 +141,7 @@
 				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
 					<div class="content-container" layout="row">
 						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img src="img/tile.png" style="width: 340px; height: 200px ">
+							<img alt="Кафельщик приобретает материалы" src="img/tile.png" style="width: 340px; height: 200px ">
 						</div>
 						<md-whiteframe class="step" layout-padding>
 							<h3>Приобретаем материалы</h3>
@@ -157,10 +157,10 @@
 				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
 					<div class="content-container" layout="row">
 						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img src="img/scraper.png" style="width: 340px; height: 200px ">
+							<img alt="Кафельщик укладывает плитку" src="img/scraper.png" style="width: 340px; height: 200px ">
 						</div>
 						<md-whiteframe class="step" layout-padding>
-							<h3> Укладываем плитку </h3>       
+							<h3> Укладываем плитку </h3>
 							<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
 							<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
 							<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
@@ -170,12 +170,33 @@
 					</div>
 				</div>
 				<div layout="row" layout-align="center center" style="height: 200px; background: #E2E2E2">
-			   
+
 			</div>
 			</div>
-
-
-			
 		</div>
-	</body>	
+
+		<div ng-show="false">
+			<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				  ga('create', 'UA-65342085-1', 'auto');
+				  ga('send', 'pageview');
+
+			</script>
+
+			<!-- Yandex.Metrika counter -->
+				<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31526563 = new Ya.Metrika({ id:31526563, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/31526563" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+			<!-- /Yandex.Metrika counter -->
+
+			<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?3121865"></script>
+			<noscript>
+				<a  href="http://top100.rambler.ru/navi/3121865/">
+					<img src="http://counter.rambler.ru/top100.cnt?3121865" alt="Rambler's Top100" border="0" />
+				</a>
+			</noscript>
+		</div>
+	</body>
 </html>
