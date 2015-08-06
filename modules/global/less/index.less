@@ -165,11 +165,26 @@ md-tabs-canvas.md-center-tabs .md-tab {
 }
 
 .costs-container {
-
 	margin-top: 80px;
 	height: 400px;
 	border-top: 5px dashed #d8d8d8;
 }
+
+@media screen and (max-width: 768px){
+    .costs-container {
+    	margin-top: 80px;
+    	height: auto !important;
+    }
+
+    .img-container{
+        border: none !important;
+    }
+
+    .step-img{
+        max-width: 300px;
+    }
+}
+
 
 .toolbar{
     max-width: 100%;

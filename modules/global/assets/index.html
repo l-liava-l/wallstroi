@@ -28,8 +28,8 @@
 				<md-icon class="attractor" md-svg-icon="img/icons/ic_expand_more_24px.svg"></md-icon>
 			</div>
 		</div>
-		<div hide-sm ng-controller="MainCtrl as main" class="main-container">
-			<div class="content-container" ng-show="!main.show">
+		<div ng-controller="MainCtrl as main" class="main-container">
+			<div  hide-sm class="content-container" ng-show="!main.show">
 				<div layout="row" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
 						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
@@ -108,12 +108,12 @@
 				</div>
 			</div>
 
-			<div ng-show="!main.show" layout="row" class="costs-container" layout-align="center center">
-				<div class="content-container" layout="row" layout-align="center center">
-					<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;   height: 200px;" layout-align="center center">
-						<img alt="Кафельщики" src="img/company.png" style="width: 300px; height: 230px ">
+			<div ng-show="!main.show" layout="row" class="costs-container" style="padding-top: 40px" layout-align="center center">
+				<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+					<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px; height: 200px;" layout-align="center center">
+						<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 340px; height: 230px ">
 					</div>
-					<md-whiteframe class="step" layout-padding flex>
+					<md-whiteframe class="step" layout-padding style="max-width: 560px;">
 						<h3>Укладка плитки в Сочи.</h3>
 	                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
 	                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
@@ -123,12 +123,12 @@
                     </md-whiteframe>
 				</div>
 			</div>
-			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-					<div class="content-container" layout="row">
-						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" style="width: 340px; height: 200px ">
+			<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
 						</div>
-						<md-whiteframe class="step" layout-padding>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
 							<h3>Осматриваем помещение</h3>
 		                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
 		                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
@@ -138,12 +138,12 @@
 					</div>
 				</div>
 
-				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-					<div class="content-container" layout="row">
-						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img alt="Кафельщик приобретает материалы" src="img/tile.png" style="width: 340px; height: 200px ">
+				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 340px; height: 200px ">
 						</div>
-						<md-whiteframe class="step" layout-padding>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
 							<h3>Приобретаем материалы</h3>
 							<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
 							<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
@@ -154,12 +154,12 @@
 					</div>
 				</div>
 
-				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0; margin-bottom: 100px" layout-align="center center">
-					<div class="content-container" layout="row">
-						<div flex="45" layout="row" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
-							<img alt="Кафельщик укладывает плитку" src="img/scraper.png" style="width: 340px; height: 200px ">
+				<div layout="row" class="costs-container" style="border: 0; height: 200px; margin-top: 0;" layout-align="center center">
+					<div class="content-container" class="img-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 340px; height: 200px ">
 						</div>
-						<md-whiteframe class="step" layout-padding>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
 							<h3> Укладываем плитку </h3>
 							<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
 							<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
