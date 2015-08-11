@@ -5,9 +5,9 @@
     angular.module('global')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', 'core', '$state'];
+    MainCtrl.$inject = ['$scope'];
 
-    function MainCtrl($scope, core, $state) {
+    function MainCtrl($scope) {
         var main = this;
     }
 

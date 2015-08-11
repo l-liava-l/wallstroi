@@ -1,14 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="global" >
 	<head>
-		<meta charset="utf-8">
-		<title>wallstroi.ru</title>
-	    <link rel="stylesheet" type="text/css" href="vendor.css">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="плитка, укладка плитки, кафельщик, плиточник, в сочи, уложить, положить, тротуарная плитка, керамогранит, кафель, мозаика, облицовка">
+    <meta name="description" content="Профессиональная укладка тротуарной плитки, керамической плитки (кафель), керамогранита, мозаики, клинкера и др. в Сочи">
+    <meta name="yandex-verification" content="40f95f3215db3b6c">
+	<meta name="mailru-domain" content="DdYie1REz5JWadE9"/>
+    <title>Плиточные работы в Сочи.</title>
+	    <link rel="stylesheet" type="text/css" href="vendor.css">
 	    <link rel="stylesheet" type="text/css" href="global.css">
 		<script type="text/javascript" src="vendor.js"></script>
 	    <script type="text/javascript" src="global.js"></script>
 	</head>
-	<body>
-		
-	</body>	
+	<body layout="column" layout-fill ng-cloack>
+		<md-toolbar class="md-primary fixed toolbar" layout="row" layout-align="center center">
+			<div class="content-container" layout="row" layout-margin flex>
+				<span hide-md hide-sm flex="25">Позвоните нам!</span>
+				<span hide-sm class="tel-span" flex>8(967) 646-53-75</span>
+				<span class="tel-span" flex>8(988) 641-13-74</span>
+				<span class="tel-span" flex>8(918) 332-13-74</span>
+			</div>
+		</md-toolbar>
+		<div class="start-img-bg" layout="row" layout-align="center center" flex="100">
+			<div class="content-container" layout="column" layout-align="center center" layout-margin  flex>
+				<h1 class="md-display-4 no-margin">Плитка</h1>
+				<h2 class="md-display-3">Плиточные работы в Сочи</h2>
+				<md-icon class="attractor" md-svg-icon="img/icons/ic_expand_more_24px.svg"></md-icon>
+			</div>
+		</div>
+		<div ng-controller="MainCtrl as main" class="main-container">
+			<div class="content-container" layout-align="center center" ng-show="!main.show">
+				<div layout-sm="column" layout-md="column" layout-lg="column" layout="row" layout-align="center center" style="margin-top: 45px">
+					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
+						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
+						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы рассчитать примерную цену услуги </span>
+					</div>
+					<md-card class="calc-container" layout="column" layout-align="center start" flex>
+						<md-tabs md-selected="main.currentType" md-border-bottom  md-autoselect layout="row" style="width: 100%;">
+			                <md-tab flex>
+			                    <span hide-sm class="md-title" style="font-size: 16px; font-weight: bold;">Укладка плитки</span>
+								<span show-sm class="md-title" style="font-size: 16px; font-weight: bold;">Помещение</span><br hide-sm>
+			                    <span hide-sm style="font-size: 14px; text-transform: capitalize;">Кафель, керамогранит, котто</span>
+			                </md-tab>
+
+			                <!--md-tab flex>
+			                    <span class="md-title"  style="font-size: 16px; font-weight: bold;">Укладка мозаики</span></br>
+			                    <span style="font-size: 14px; text-transform: capitalize;">Любой сложности</span>
+			                </md-tab-->
+
+			                <md-tab flex>
+			                    <span hide-sm class="md-title"  style="font-size: 16px; font-weight: bold;">Тротуарная плитка</span>
+								<span show-sm class="md-title" style="font-size: 16px; font-weight: bold;">Улица</span><br hide-sm>
+			                    <span hide-sm style="font-size: 14px; text-transform: normal;">Кладем в любых объемах</span>
+			                </md-tab>
+			            </md-tabs>
+			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
+			            	<div flex class="calc-padding-block" style="padding-left: 50px;" layout-fill>
+			            		<md-select class="input-container" ng-model="vm.size" style="margin-top: 5px; padding-bottom: 10px; width: 100%;">
+									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите размер плитки (мм)' }}</md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+								</md-select>
+								<md-input-container  class="input-container" style="margin-top: 0;">
+									<label>Площадь поверхности (кв.м)</label>
+									<input ng-model="vm.placeSize" style="" type="number">
+								</md-input-container>
+								<md-checkbox class="input-container" ng-model="vm.diagonal" style="margin-top: 5px;">
+						         	Укладка по диагонали
+						        </md-checkbox>
+						        <div layout="row" style="margin-left: 5px;">
+						        	<div layout="row" layout-align="center center">
+						        		<span class="place-type_span" ng-class="{active: !vm.placeType}">Пол</span>
+						        	</div>
+						        	<md-switch ng-model="vm.placeType"></md-switch>
+						        	<div layout="row" layout-align="center center">
+						        		<span class="place-type_span" ng-class="{active: vm.placeType}">Стена</span>
+						        	</div>
+						        </div>
+			            	</div>
+			            	<div layout="row" layout-align="center center" flex>
+								<span style="font-size: 56px;">
+									<span hide-sm>=</span> {{9400}}<span style="font-size: 22px;">руб</span>
+								</span>
+			            	</div>
+			            </div>
+			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
+			            	<div flex class="calc-padding-block" style="padding-left: 50px;">
+			            		<md-select class="input-container" ng-model="vm.size" style=" margin-top: 5px; padding-bottom: 10px;">
+									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите тип плитки (мм)' }}</md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+								</md-select>
+								<md-input-container class="input-container" style=" margin-top: 0;">
+									<label>Площадь поверхности (кв.м)</label>
+									<input ng-model="vm.placeSize" style="" type="number">
+								</md-input-container>
+								<md-checkbox class="input-container" ng-model="vm.badPlace" style="  margin-top: 5px;">
+						         	Выравнивание поверхности
+						        </md-checkbox>
+						        <md-checkbox class="input-container" ng-model="vm.rmOld" style="  margin-top: 5px;">
+						         	Удаление старой плитки
+						        </md-checkbox>
+			            	</div>
+			            	<div layout="row" layout-align="center center" flex>
+								<span style="font-size: 56px;">
+									<span hide-sm>=</span> {{12540}}<span style="font-size: 22px;">руб</span>
+								</span>
+			            	</div>
+			            </div>
+					</md-card>
+				</div>
+			</div>
+
+			<div ng-show="!main.show" layout="row" class="costs-container" style="padding-top: 40px" layout-align="center center">
+				<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+					<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px; height: 200px;" layout-align="center center">
+						<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 340px; height: 230px ">
+					</div>
+					<md-whiteframe class="step" layout-padding style="max-width: 560px;">
+						<h3>Укладка плитки в Сочи.</h3>
+	                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
+	                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
+	                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
+	                    <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
+	                    <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
+                    </md-whiteframe>
+				</div>
+			</div>
+			<div layout="row" class="costs-container" style="border: 0; margin-top: 0;" layout-align="center center">
+					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
+						</div>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
+							<h3>Осматриваем помещение</h3>
+		                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
+		                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
+		                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
+		                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
+		                </md-whiteframe>
+					</div>
+				</div>
+
+				<div layout="row" class="costs-container" style="border: 0; margin-top: 0;" layout-align="center center">
+					<div class="content-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 340px; height: 200px ">
+						</div>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
+							<h3>Приобретаем материалы</h3>
+							<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
+							<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
+							<p>Выбрать качественную плитку Вам всегда помогут наши консультанты, которые предложат идеальный вариант.</p>
+							<p>Оплата приобретенного товара производится заранее и отдельно от общих работ.</p>
+							<p>Также мы с радостью кладем уже приобретенные Вами изделия</p>
+		                </md-whiteframe>
+					</div>
+				</div>
+
+				<div layout="row" class="costs-container" style="border: 0;  margin-top: 0;" layout-align="center center">
+					<div class="content-container" class="img-container" layout-sm="column" layout="row" layout-align="center center">
+						<div layout="row" class="img-container" style="border-right: 5px solid #E0E0E0; margin-right: 10px;" layout-align="center center">
+							<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 340px; height: 200px ">
+						</div>
+						<md-whiteframe class="step" layout-padding style="max-width: 560px;">
+							<h3> Укладываем плитку </h3>
+							<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
+							<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
+							<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
+							<p>Расчет выполняется после оказания всех услуг плиточника по зафиксированному на этапе осмотра тарифу.</p>
+							<p>В случае возникновения непредвиденных обстоятельств, вы получите скидку до 30% на их устранение.</p>
+		                </md-whiteframe>
+					</div>
+				</div>
+				<div layout="row" layout-align="center center" style="height: 200px; background: #E2E2E2">
+
+			</div>
+			</div>
+		</div>
+
+		<div ng-show="false">
+			<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				  ga('create', 'UA-65342085-1', 'auto');
+				  ga('send', 'pageview');
+
+			</script>
+
+			<!-- Yandex.Metrika counter -->
+				<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter31526563 = new Ya.Metrika({ id:31526563, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/31526563" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+			<!-- /Yandex.Metrika counter -->
+
+			<script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?3121865"></script>
+			<noscript>
+				<a  href="http://top100.rambler.ru/navi/3121865/">
+					<img src="http://counter.rambler.ru/top100.cnt?3121865" alt="Rambler's Top100" border="0" />
+				</a>
+			</noscript>
+		</div>
+	</body>
 </html>

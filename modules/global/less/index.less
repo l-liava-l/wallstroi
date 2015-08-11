@@ -1,0 +1,253 @@
+@font-face {
+    font-family: 'arian_amuregular';
+    src: url('fonts/arnamu.eot');
+    src: url('fonts/arnamu.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arnamu.woff') format('woff'),
+         url('fonts/arnamu.ttf.gz') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'arian_amubold';
+    src: url('fonts/arnamu_bold.eot');
+    src: url('fonts/arnamu_bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arnamu_bold.woff') format('woff'),
+         url('fonts/arnamu_bold.ttf.gz') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'arian_amuitalic';
+    src: url('fonts/arnamu_italic.eot');
+    src: url('fonts/arnamu_italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arnamu_italic.woff') format('woff'),
+         url('fonts/arnamu_italic.ttf.gz') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'arian_amubold_italic';
+    src: url('fonts/arnamu_italic_bold.eot');
+    src: url('fonts/arnamu_italic_bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arnamu_italic_bold.woff') format('woff'),
+         url('fonts/arnamu_italic_bold.ttf.gz') format('truetype');
+    font-weight: bold;
+}
+
+
+body{
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	font-family: 'arian_amuregular';
+	position: static !important;
+}
+
+h1{
+	font-size: 150px !important;
+}
+
+@media screen and (max-width: 768px) {
+    h1{
+    	font-size: 100px !important;
+    }
+
+    .md-display-3{
+        font-size: 28px !important;
+    }
+
+    .tel-span{
+        font-size: 16px;
+    }
+
+    .calc-container{
+    	min-height: 500px !important;
+    	max-width: 300px !important;
+
+        .calc-padding-block {
+            padding-left: 10px !important;
+        }
+
+    }
+
+    md-tabs-canvas {
+    	min-height: 40px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .md-display-3{
+        font-size: 25px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .calc-help-container{
+        max-width: none !important;
+        padding-bottom: 20px;
+        * {
+            width: 100%;
+            font-size: 18px !important;
+            margin: 10px !important;
+            text-align: left;
+        }
+    }
+}
+
+h3 {
+  font-size: 1.17em;
+  color: #5E5D5D
+}
+
+p{
+	color: #666;
+	color: rgb(102, 102, 102);
+	display: block;
+	font-family: 'arian_amuregular';
+	font-size: 13px;
+	line-height: 17px;
+}
+
+.tel-span{
+	text-align: center;
+}
+
+.content-container{
+	margin: 0 auto;
+	max-width: 1150px;
+    padding: 0 20px;
+}
+
+.start-img-bg{
+	margin-top: 62px;
+	background: url('img/bg.jpg');
+	max-height: 1000px;
+}
+
+.attractor{
+	width: 200px;
+	height: 200px;
+	color: rgba(244, 67, 54, 1);
+}
+
+
+.how-we-work {
+	border-bottom: 1px solid red;
+	font-weight: lighter;
+}
+md-tabs-canvas {
+	min-height: 80px;
+}
+md-tabs-wrapper {
+	width: 100%;
+}
+
+md-pagination-wrapper{
+	margin: 0 0 !important;
+}
+
+md-tabs-canvas.md-center-tabs .md-tab {
+	width: 50%;
+}
+
+.md-tab.md-active{
+	color: rgb(117, 117, 117) !important;
+}
+
+.main-container{
+	background-color: rgba(238, 238, 238, 1);
+	display: inline-table;
+  	width: 100%;
+}
+
+.calc-container {
+	max-height: 400px;
+	min-height: 400px;
+	max-width: 800px;
+    width: 100%;
+}
+
+.calc-help-container{
+	max-width: 300px;
+}
+
+.steps-container{
+	margin-top: 50px;
+
+	.step{
+		width: 100%;
+		margin: 20px 20px;
+		max-width: 520px;
+		min-height: 250px;
+
+	}
+
+	.steps-container_step {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.costs-container {
+	margin-top: 80px;
+	border-top: 5px dashed #d8d8d8;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 768px){
+    .costs-container {
+    	margin-top: 80px;
+    	height: auto !important;
+    }
+
+    .img-container{
+        border: none !important;
+    }
+
+    .step-img{
+        max-width: 300px;
+    }
+}
+
+
+.toolbar{
+    max-width: 100%;
+}
+
+//modifiers
+.no-margin{
+	margin: 0;
+}
+
+.fixed{
+	position: fixed;
+}
+
+.place-type_span {
+	color: #777;
+
+	&.active{
+		color: rgba(48, 178, 55, 1);
+	}
+}
+
+md-input-container, md-select{
+
+	* {
+		border-color: rgba(224, 224, 224, 1) !important;
+	}
+
+	&.md-input-focused label {
+		color: rgba(189, 189, 189, 1) !important;
+	}
+
+}
+
+@-moz-document url-prefix(){
+
+}
