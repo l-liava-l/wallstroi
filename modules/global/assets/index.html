@@ -78,7 +78,7 @@
 								</md-select>
 								<md-input-container  class="input-container" style="margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
-									<input ng-model="vm.placeSize" style="" type="number">
+									<input ng-model="vm.placeSize" maxlength="4" type="number">
 								</md-input-container>
 								<md-checkbox class="input-container" ng-model="vm.diagonal" style="margin-top: 5px;">
 						         	Укладка по диагонали
@@ -95,30 +95,30 @@
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									<span hide-sm>=</span> {{9400}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span> {{ vm.getCost() || '0'}}<span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
 			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
 			            	<div flex class="calc-padding-block" style="padding-left: 50px;">
-			            		<md-select class="input-container" ng-model="vm.size" style=" margin-top: 5px; padding-bottom: 10px;">
-									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите тип плитки (мм)' }}</md-select-label>
+			            		<md-select class="input-container" ng-disabled="true"  ng-model="vm.tileType" style=" margin-top: 5px; padding-bottom: 10px;">
+									<md-select-label style="width: 100%;">{{ vm.tileType || 'Выберите тип плитки (мм)' }}</md-select-label>
 									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
 								</md-select>
 								<md-input-container class="input-container" style=" margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
-									<input ng-model="vm.placeSize" style="" type="number">
+									<input ng-model="vm.placeSizeStreet" maxlength="4" style="" type="number">
 								</md-input-container>
-								<md-checkbox class="input-container" ng-model="vm.badPlace" style="  margin-top: 5px;">
+								<md-checkbox ng-disabled="true" class="input-container" ng-model="vm.badPlace" style="  margin-top: 5px;">
 						         	Выравнивание поверхности
 						        </md-checkbox>
-						        <md-checkbox class="input-container" ng-model="vm.rmOld" style="  margin-top: 5px;">
+						        <md-checkbox ng-disabled="true" class="input-container" ng-model="vm.rmOld" style="  margin-top: 5px;">
 						         	Удаление старой плитки
 						        </md-checkbox>
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									<span hide-sm>=</span> {{12540}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span> {{(vm.placeSizeStreet * 550 ) || '0'}}<span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
@@ -136,7 +136,7 @@
 							 	<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 280px;">
 							 </div>
 							 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(1)">
-							 	<h3 style="margin: 0; text-align: center">Как мы работаем?</h3>
+							 	<h3 style="margin: 0; text-align: center">Точная стоимость</h3>
 							 	<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" class="step-img" style="width: 280px; margin-top: 10px">
 							 </div>
 						</div>
