@@ -13,17 +13,19 @@
 		<script type="text/javascript" src="vendor.js"></script>
 	    <script type="text/javascript" src="global.js"></script>
 	</head>
-	<body ng-controller="MainCtrl as main"  layout="column" layout-fill ng-cloack>
+	<body ng-controller="MainCtrl as main"  layout="column" style="overflow-y: {{main.fixBody ? 'hidden' : 'auto'}}" layout-fill ng-cloack>
 		<md-toolbar class="md-primary fixed toolbar" layout="row" layout-align="center center">
 			<div class="content-container" layout="row" layout-margin flex>
-				<span hide-md hide-sm flex="25">Позвоните нам!</span>
+				<div hide-md hide-sm flex="25">
+					<span style="padding: 20px; background-color: rgba(0,0,0,.2);">Позвоните нам!</span>
+				</div>
 				<span hide-sm class="tel-span" flex>8(967) 646-53-75</span>
 				<span class="tel-span" flex>8(962) 881-81-58</span>
 				<span class="tel-span" flex>8(928) 454-05-56</span>
 			</div>
 		</md-toolbar>
 
-		<div class="start-img-bg" style="padding-top: 100px;">
+		<div class="start-img-bg" style="padding-top: 100px; min-height: 500px">
 			<div class="content-container" layout="row" layout-align="center center">
 				<div class="md-whiteframe-z1" style="padding-top: 70px; background: #fff" flex layout="column" layout-align="center center" layout-margin>
 					<h1 class="md-display-4 no-margin">Плитка</h1>
@@ -34,11 +36,11 @@
 		</div>
 
 		<div class="start-img-bg" style="margin-top: 40px;" layout="row">
-			<div class="content-container" layout="row" layout-align="center center" flex>
-				<div flex="40" layout="row" layout-align="center center">
+			<div class="content-container" layout-sm="column" layout-fill layout="row" layout-align="center center" flex>
+				<div flex-sm="100" flex="40" layout="row" layout-align="center center">
 					<span style="font-size: 40px; color: #636262">от 600 руб/кв.м</span>
 				</div>
-				<div style="font-size: 40px; color: #636262" layout="row" layout-align="center center" flex>
+				<div hide-sm flex-sm="100" style="font-size: 40px; color: #636262" layout="row" layout-align="center center" flex>
 					<span>1500 руб - минимальный заказ</span>
 				</div>			
 			</div>
@@ -48,7 +50,7 @@
 			<div class="content-container" layout-align="center center" ng-show="!main.show">
 				<div layout-sm="column" layout-md="column" layout-lg="column" layout="row" layout-align="center center" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
-						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость зависит от качества поверхности, объема работ и размера плитки. </span>
+						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость работы плиточника зависит от размера плитки, качества и площади поверхности. </span>
 						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы рассчитать примерную цену услуги </span>
 					</div>
 					<md-card class="calc-container" layout="column" layout-align="center start" flex>
@@ -128,89 +130,100 @@
 
 			<div ng-show="!main.show" layout="row" class="costs-container" style="padding-top: 40px" layout-align="center center">
 				<div class="content-container" layout-sm="column" layout-align="center center">
-					<h2 class="how-we-work-header">Как мы работаем?</h2>
-					<div layout-sm="column" layout="row" layout-margin layout-align="center center">
-						 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(0)">
-						 	<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 280px;">
-						 </div>
-						 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(1)">
-						 	<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" class="step-img" style="width: 280px; margin-top: 10px">
-						 </div>
-						 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(2)">
-						 	<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 280px; margin-top: 10px">
-						 </div>
-						 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(3)">
-						 	<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 280px; margin-top: 20px">
-						 </div>
+					<h2 class="how-we-work-header">Полезная информация</h2>
+					<div layout="row" layout-md="column" layout-sm="column" layout-lg="column" layout-align="center center">
+						<div layout-sm="column" layout="row" layout-align="center center" flex>
+							<div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(0)">
+							 	<h3 style="margin: 0; text-align: center">Кто мы?</h3>
+							 	<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 280px;">
+							 </div>
+							 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(1)">
+							 	<h3 style="margin: 0; text-align: center">Как мы работаем?</h3>
+							 	<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" class="step-img" style="width: 280px; margin-top: 10px">
+							 </div>
+						</div>
+						<div layout-sm="column" layout="row" layout-align="center center" flex>
+							<div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(2)">
+							 	<h3 style="margin: 0; text-align: center">Скидки для Вас!</h3>
+							 	<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 280px; margin-top: 10px">
+							 </div>
+							 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(3)">
+							 	<h3 style="margin: 0; text-align: center">Укладка плитки</h3>
+							 	<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 280px; margin-top: 20px">
+							 </div>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<md-sidenav style="position: fixed; padding-top: 62px; overflow: hidden;" class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-				<md-toolbar style="background: #fff;" layout="row" layout-align="start center">
-			        <md-button class="md-icon-button" ng-click="main.closeRight()">
-			        	<md-icon style="color: #000; width: 25px; height: 25px;" md-svg-icon="img/icons/ic_close_24px.svg"></md-icon>
-			        </md-button>
-			    </md-toolbar>
-				<md-content layout-padding layout="row" layout-align="center center" layout-align-sm="center start" style="height: 100%">			
-					<div ng-if="main.article === 0" style="max-width: 400px" flex>
-						<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 340px; height: 230px ">
-				
-						<div>
-							<h3>Укладка плитки в Сочи.</h3>
-		                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
-		                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
-		                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
-		                    <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
-		                    <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
+			<md-sidenav style="position: fixed; margin-top: 62px; overflow-y: scroll; "  md-is-open="main.fixBody"class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+				<md-content layout="column" style="height: 100%;">		
+					<md-toolbar style="background: #fff;" layout="row" layout-align="start center">
+				        <md-button class="md-icon-button" ng-click="main.closeRight()">
+				        	<md-icon style="color: #000; width: 25px; height: 25px;" md-svg-icon="img/icons/ic_close_24px.svg"></md-icon>
+				        </md-button>
+				    </md-toolbar>
+				    <div layout-padding layout="row" style="overflow-y: visible" layout-align="center center" layout-align-sm="center start" flex> 
+				    	<div ng-if="main.article === 0" style="max-width: 400px" flex>
+							<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 340px; height: 230px ">
+					
+							<div>
+								<h3>Услуги плиточника в Сочи.</h3>
+			                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
+			                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
+			                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
+			                    <p> Помимо плиточных мастеров в штате есть дизайнер и консультант по выбору материалов.</p>
+			                    <p> Если Вам необходимо положить плитку качественно, то эта задача для нас.</p>
+							</div>
 						</div>
-					</div>
-				
-					<div ng-if="main.article === 1" style="max-width: 400px" flex>
-						<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
+					
+						<div ng-if="main.article === 1" style="max-width: 400px" flex>
+							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
 
-						<div style="max-width: 400px">
-							<h3>Осматриваем помещение</h3>
-		                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
-		                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
-		                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
-		                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
+							<div style="max-width: 400px">
+								<h3>Осматриваем помещение</h3>
+			                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
+			                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
+			                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
+			                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
+							</div>
 						</div>
-					</div>
 
-					<div ng-if="main.article === 2" style="max-width: 400px" flex>
-						<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 340px; height: 200px ">
-						
-						<div style="max-width: 400px">
-							<h3>Приобретаем материалы</h3>
-							<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
-							<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
-							<p>Выбрать качественную плитку Вам всегда помогут наши консультанты, которые предложат идеальный вариант.</p>
-							<p>Оплата приобретенного товара производится заранее и отдельно от общих работ.</p>
-							<p>Также мы с радостью кладем уже приобретенные Вами изделия</p>
+						<div ng-if="main.article === 2" style="max-width: 400px" flex>
+							<img alt="Кафельщик приобретает материалы" src="img/tile.png" class="step-img" style="width: 340px; height: 200px ">
+							
+							<div style="max-width: 400px">
+								<h3>Приобретаем материалы</h3>
+								<p>Наша компания сотрудничает с большинством строительных и плиточных магазинов города Сочи.</p>
+								<p>Благодаря этому Вы сможете получить скидку до 10% на все необходимое у наших поставщиков.</p>
+								<p>Выбрать качественную плитку Вам всегда помогут наши консультанты, которые предложат идеальный вариант.</p>
+								<p>Оплата приобретенного товара производится заранее и отдельно от общих работ.</p>
+								<p>Также мы с радостью кладем уже приобретенные Вами изделия</p>
+							</div>
 						</div>
-					</div>
 
-					<div ng-if="main.article === 3" style="max-width: 400px" flex>
-						<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 340px; height: 200px ">
-						<div style="max-width: 400px">
-							<h3> Укладываем плитку </h3>
-							<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
-							<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
-							<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
-							<p>Расчет выполняется после оказания всех услуг плиточника по зафиксированному на этапе осмотра тарифу.</p>
-							<p>В случае возникновения непредвиденных обстоятельств, вы получите скидку до 30% на их устранение.</p>
-						</div>
-					</div>			
+						<div ng-if="main.article === 3" style="max-width: 400px" flex>
+							<img alt="Кафельщик укладывает плитку" src="img/scraper.png"  class="step-img" style="width: 340px; height: 200px ">
+							<div style="max-width: 400px">
+								<h3> Укладываем плитку </h3>
+								<p> Производится укладка керамической плитки(кафель), тротуарной плитки, керамогранита, котто и клинкера, а также декоративной мозаики на сетке и авторской мозаичной плитки.</p>
+								<p> Плиточник будет работать до 8 часов в сутки в любое удобное для Вас время.</p>
+								<p> Если объем задач не позволяет предоставить качественную услугу за один рабочий день, то будет составлен график работ специально для заказчика</p>
+								<p>Расчет выполняется после оказания всех услуг плиточника по зафиксированному на этапе осмотра тарифу.</p>
+								<p>В случае возникновения непредвиденных обстоятельств, вы получите скидку до 30% на их устранение.</p>
+							</div>
+						</div>			
+				    </div>
 				</md-content>
 			</md-sidenav>
 
-			
-				<div layout="row" layout-align="center center">
-					<div class="content-container" layout="row" style="height: 200px; background: #E2E2E2" flex>
-
-					</div>
+			<div layout="row" style="padding-top: 40px" layout-align="center center">
+				<div class="content-container" layout="column" layout-align="center center">
+					<h2 style="color: #C0C0C0;">Благодарим за внимание!</h2>
+					<!--h3>Позвоните нам по номерам: 8(967) 646-53-75 8(962) 881-81-58 8(928) 454-05-56</h3-->
 				</div>
+			</div>
+
 			</div>
 		</div>
 
