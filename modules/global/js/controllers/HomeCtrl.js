@@ -32,7 +32,7 @@
             var withDiagonal = vm.diagonal ? mSqare + (mSqare/100 * 15) : mSqare;
             var withPlaceType = vm.placeType ? withDiagonal + (mSqare/100 * 15) : withDiagonal;
 
-            return vm.placeSize *  withPlaceType;
+            return Math.round(vm.placeSize *  withPlaceType);
         }
     }
 })();
