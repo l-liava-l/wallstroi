@@ -45,15 +45,38 @@ body{
 	padding: 0;
 	font-family: 'arian_amuregular';
 	position: static !important;
+    background-color: rgba(238, 238, 238, 1);
 }
 
 h1{
 	font-size: 150px !important;
 }
 
+*{
+    outline: none !important;
+}
+
+.md-sidenav-right{
+    width: 50%;
+    min-width: initial;
+    max-width: initial;
+}
+
+
+md-backdrop.md-sidenav-backdrop{
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+}
+
 @media screen and (max-width: 768px) {
     h1{
     	font-size: 100px !important;
+    }
+
+    .md-sidenav-right{
+        width: 90%;
+   
     }
 
     .md-display-3{
@@ -113,6 +136,20 @@ p{
 	line-height: 17px;
 }
 
+.tileElement{
+    width: 78px;
+    height: 78px;
+    display: inline;
+    float: left;
+    border: 1px solid #f0f0f0;
+    
+   
+    &:hover{
+        border: 1px solid #c9c9c9;
+        background: #e0e0e0;
+    }
+}
+
 .tel-span{
 	text-align: center;
 }
@@ -124,9 +161,11 @@ p{
 }
 
 .start-img-bg{
-	margin-top: 62px;
-	background: url('img/bg.jpg');
-	max-height: 1000px;
+	//margin-top: 62px;
+	//background: url('img/bg.jpg');
+
+    background-color: rgba(238, 238, 238, 1);
+	//max-height: 1000px;
 }
 
 .attractor{
@@ -217,6 +256,7 @@ md-tabs-canvas.md-center-tabs .md-tab {
 
 .toolbar{
     max-width: 100%;
+    z-index: 100;
 }
 
 .big-white-fab{
@@ -228,6 +268,13 @@ md-tabs-canvas.md-center-tabs .md-tab {
     &:hover{
         background: #fafafa;
     }
+}
+
+.how-we-work-header{
+    text-align: center;
+    margin-top: 0px;
+    color: #7B7979;
+    margin-bottom: 35px;
 }
 
 //modifiers
