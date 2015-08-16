@@ -16,16 +16,35 @@
 	<body ng-controller="MainCtrl as main"  style="overflow-y: {{main.fixBody ? 'hidden' : 'auto'}}"  ng-cloak>
 		<md-toolbar class="md-primary fixed toolbar" layout="row" layout-align="center center">
 			<div class="content-container" layout="row" layout-margin flex>
-				<div hide-md hide-sm flex="25">
-					<span style="padding: 20px; background-color: rgba(0,0,0,.2);">Позвоните нам!</span>
+				<div hide-md flex="25">
+					<span style="padding: 20px; background-color: rgba(0,0,0,.2);">Позвоните&nbsp;нам!</span>
 				</div>
-				<span hide-sm class="tel-span" flex>8(988) 188-11-68</span>
-				<span class="tel-span" flex>8(962) 881-81-58</span>
-				<span class="tel-span" flex>8(928) 454-05-56</span>
+				<div layout="row" layout-align="center center" layout-fill flex>
+					<md-button show-sm hide style="position: absolute; right: 0"  class="md-fab md-raised md-accent" href="tel:+79881881168">
+						<md-icon md-svg-icon="img/icons/ic_phone_24px.svg"></md-icon>
+					</md-button>
+					<a hide-sm class="tel-span" flex>8(988) 188-11-68</a>
+					<a hide-sm class="tel-span" flex>8(962) 881-81-58</a>
+					<a hide-sm class="tel-span" flex>8(928) 454-05-56</a>
+				</div>
 			</div>
 		</md-toolbar>
 		
-		<div class="main-container" style="padding-top: 100px">
+		<div class="main-container" style="margin-top: 100px">
+			<!--div show-sm hide layout="column" layout-align="center center" layout-padding layout-margin>
+				<md-button class="md-raised" style="width: 100%" href="tel:+79881881168" >
+					<a class="tel-span" style="color: #333" flex>8(988) 188-11-68</a>
+				</md-button>
+
+				<md-button class="md-raised" style="width: 100%" href="tel:+79628818158">
+					<a class="tel-span" style="color: #333" flex>8(962) 881-81-58</a>
+				</md-button>
+
+				<md-button class="md-raised" style="width: 100%" href="tel:+79284540556">
+					<a hide-sm class="tel-span" style="color: #333" flex>8(928) 454-05-56</a>
+				</md-button>
+			</div-->
+
 			<div class="content-container" layout="row" layout-align="center center">
 				<div class="md-whiteframe-z1" style="padding-top: 70px; background: #fff" flex>
 					<h1 class="md-display-4 no-margin" style="text-align: center">Плитка</h1>
@@ -73,8 +92,8 @@
 			            <div ng-if="main.currentType === 0" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
 			            	<div flex class="calc-padding-block" style="padding-left: 50px;" layout-fill>
 			            		<md-select class="input-container" ng-model="vm.size" style="margin-top: 5px; padding-bottom: 10px; width: 100%;">
-									<md-select-label style="width: 100%;">{{ vm.size || 'Выберите размер плитки (мм)' }}</md-select-label>
-									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+									<md-select-label style="width: 100%;"><!--noindex-->{{ vm.size || 'Выберите размер плитки (мм)' }}<!--/noindex--></md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes"><!--noindex-->{{size}}<!--/noindex--></md-option>
 								</md-select>
 								<md-input-container  class="input-container" style="margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
@@ -95,15 +114,15 @@
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									<span hide-sm>=</span> {{ vm.getCost() || '0'}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span><!--noindex-->{{ vm.getCost() || '0'}}<!--/noindex--><span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
 			            <div ng-if="main.currentType === 1" ng-controller="HomeCtrl as vm" style="width: 100%" layout-sm="column"  layout="row" layout-padding flex>
 			            	<div flex class="calc-padding-block" style="padding-left: 50px;">
 			            		<md-select class="input-container" ng-disabled="true"  ng-model="vm.tileType" style=" margin-top: 5px; padding-bottom: 10px;">
-									<md-select-label style="width: 100%;">{{ vm.tileType || 'Выберите тип плитки (мм)' }}</md-select-label>
-									<md-option ng-value="size" ng-repeat="size in vm.sizes">{{size}}</md-option>
+									<md-select-label style="width: 100%;"><!--noindex-->{{ vm.tileType || 'Выберите тип плитки (мм)' }}<!--/noindex--></md-select-label>
+									<md-option ng-value="size" ng-repeat="size in vm.sizes"><!--noindex-->{{size}}<!--/noindex--></md-option>
 								</md-select>
 								<md-input-container class="input-container" style=" margin-top: 0;">
 									<label>Площадь поверхности (кв.м)</label>
@@ -118,7 +137,7 @@
 			            	</div>
 			            	<div layout="row" layout-align="center center" flex>
 								<span style="font-size: 56px;">
-									<span hide-sm>=</span> {{(vm.placeSizeStreet * 550 ) || '0'}}<span style="font-size: 22px;">руб</span>
+									<span hide-sm>=</span><!--noindex-->{{(vm.placeSizeStreet * 550 ) || '0'}}<!--/noindex--><span style="font-size: 22px;">руб</span>
 								</span>
 			            	</div>
 			            </div>
@@ -136,7 +155,7 @@
 							 	<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 280px;">
 							 </div>
 							 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(1)">
-							 	<h3 style="margin: 0; text-align: center">Точная стоимость</h3>
+							 	<h3 style="margin: 0; text-align: center">Первичный осмотр</h3>
 							 	<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" class="step-img" style="width: 280px; margin-top: 10px">
 							 </div>
 						</div>
@@ -218,6 +237,11 @@
 			<div layout="row" style="padding-top: 40px" layout-align="center center">
 				<div class="content-container" layout="column" layout-align="center center">
 					<h2 style="color: #C0C0C0;">Благодарим за внимание!</h2>
+					<div show-sm hide layout="column" style="padding-bottom: 10px">
+						<a class="tel-span" style="color: #C0C0C0;" flex>8(988) 188-11-68</a>
+						<a class="tel-span" style="color: #C0C0C0;" flex>8(962) 881-81-58</a>
+						<a class="tel-span" style="color: #C0C0C0;" flex>8(928) 454-05-56</a>
+					</div>
 					<!--h3>Позвоните нам по номерам: 8(967) 646-53-75 8(962) 881-81-58 8(928) 454-05-56</h3-->
 				</div>
 			</div>
