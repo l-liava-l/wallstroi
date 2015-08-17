@@ -7,6 +7,12 @@
     <meta name="description" content="Мы занимаемся укладкой различных видов плитки и даем клиентам возможность получить консультацию дизайнера, плиточных мастеров, а также доставляем материалы на место.">
     <meta name="yandex-verification" content="40f95f3215db3b6c">
 	<meta name="mailru-domain" content="DdYie1REz5JWadE9"/>
+
+	<meta property="og:title" content="Плиточные работы в Сочи." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://wallstroi.ru" />
+	<meta property="og:image" content="http://wallstroi.ru/img/company.png" />
+
     <title>Плиточные работы в Сочи.</title>
 	    <link rel="stylesheet" type="text/css" href="vendor.css">
 	    <link rel="stylesheet" type="text/css" href="global.css">
@@ -47,8 +53,10 @@
 
 			<div class="content-container" layout="row" layout-align="center center">
 				<div class="md-whiteframe-z1" style="padding-top: 70px; background: #fff" flex>
-					<h1 class="md-display-4 no-margin" style="text-align: center">Плитка</h1>
-					<h2 class="md-display-3" style="text-align: center; margin-bottom: 0px">Плиточные работы в Сочи</h2>
+					<h1 class="md-display-4 no-margin" style="text-align: center" ng-if="vm.showTileHeader">Плиточник</h1>
+					<h2 class="md-display-4 no-margin" style="text-align: center" ng-if="vm.showTileHeader">Укладка плитки в Сочи</h2>
+					<div class="md-display-4 no-margin" style="text-align: center" ng-if="!vm.showTileHeader">Плитка</div>
+					<h2 class="md-display-3" style="text-align: center; margin-bottom: 0px;" ng-if="!vm.showTileHeader">Плиточные работы в Сочи</h2>
 					<div style="text-align: center">
 						<md-icon class="attractor" style="margin: 0 auto" md-svg-icon="img/icons/ic_expand_more_24px.svg"></md-icon>
 					</div>
@@ -67,7 +75,7 @@
 			<div class="content-container" layout-align="center center" ng-show="!main.show">
 				<div layout-sm="column" layout-md="column" layout-lg="column" layout="row" layout-align="center center" style="margin-top: 45px">
 					<div class="calc-help-container" style="color: #999" layout="column" layout-align="center center" flex>
-						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость работы плиточника зависит от размера плитки, качества и площади поверхности. </span>
+						<span style="font-size: 22px; margin-bottom: 2em;">Стоимость услуг плиточника зависит от размера плитки, качества и площади поверхности. </span>
 						<span style="font-size: 18px">Вы можете использовать этот калькулятор чтобы рассчитать примерную цену услуги </span>
 					</div>
 					<md-card class="calc-container" layout="column" layout-align="center start" flex>
@@ -155,7 +163,7 @@
 							 	<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 280px;">
 							 </div>
 							 <div class="big-white-fab md-whiteframe-z1" ng-click="main.openRight(1)">
-							 	<h3 style="margin: 0; text-align: center">Первичный осмотр</h3>
+							 	<h3 style="margin: 0; text-align: center">Составление сметы</h3>
 							 	<img alt="Осмотр помещения кафельщиком" src="img/roulette.png" class="step-img" style="width: 280px; margin-top: 10px">
 							 </div>
 						</div>
@@ -185,7 +193,7 @@
 							<img alt="Кафельщики" src="img/company.png"  class="step-img" style="width: 340px; height: 230px ">
 					
 							<div>
-								<h3>Услуги плиточника в Сочи.</h3>
+								<h3>Профессиональные плиточники в Сочи.</h3>
 			                    <p> WALLSTROI - это команда профессиональных плиточников.</p>
 			                    <p> Мы производим монтаж тротуарной и кафельной плитки, а также керамогранита и клинкера.</p>
 			                    <p> Наши специалисты имеют колоссальный опыт в укладке мозаичной плитки и котто.</p>
@@ -198,11 +206,11 @@
 							<img alt="Осмотр помещения кафельщиком" src="img/roulette.png"  class="step-img" style="width: 340px; height: 200px ">
 
 							<div style="max-width: 400px">
-								<h3>Осматриваем помещение</h3>
+								<h3>Составление сметы</h3>
 			                    <p> Вы звоните нам заранее по указанным номерам или оставляете email-заявку и договариваетесь на оказание услуги.</p>
 			                    <p> В согласованную дату и время к Вам приедет плиточник, который произведет осмотр, замеры и подготовку площадки для укладки плитки.</p>
 			                    <p> В этот же день будет рассчитана фиксированная стоимость. (Она не изменится без дополнительных работ)</p>
-			                    <p> Если потребуется снятие старой плитки или другие работы, то это также будет включено в общую стоимость.</p>
+			                    <p> Если потребуется снятие старой плитки или другие услуги, то это также будет включено в общую стоимость.</p>
 							</div>
 						</div>
 
