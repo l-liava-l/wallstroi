@@ -43,17 +43,21 @@ body{
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
-	font-family: 'arian_amuregular';
+	font-family: 'Arial';
 	position: static !important;
-    background-color: rgba(238, 238, 238, 1);
+    background-color: #111;
+    color: #fff;
 }
 
-h1{
-	font-size: 150px !important;
-}
+
 
 *{
     outline: none !important;
+}
+
+
+.main-container{
+    background-color: #111;
 }
 
 .md-sidenav-right{
@@ -61,6 +65,7 @@ h1{
     min-width: initial;
     max-width: initial;
 }
+
 
 .tel-span{
     text-align: center;
@@ -111,7 +116,7 @@ p{
 
 .content-container{
 	margin: 0 auto;
-	max-width: 1150px;
+	max-width: 1200px;
     padding: 0 20px;
 }
 
@@ -153,11 +158,6 @@ md-tabs-canvas.md-center-tabs .md-tab {
 	color: rgb(117, 117, 117) !important;
 }
 
-.main-container{
-	background-color: rgba(238, 238, 238, 1);
-	display: inline-table;
-  	width: 100%;
-}
 
 .calc-container {
 	max-height: 400px;
@@ -325,4 +325,102 @@ md-input-container, md-select{
             text-align: left;
         }
     }
+}
+
+
+
+.services-container{
+    margin-top: 40px;
+    min-height: 600px;
+}
+
+.service-tile{
+    height: 390px;
+    width: 359;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 0;
+    padding: 33px 40px;
+    padding-bottom: 0;
+
+    &.slab{
+        //background: url(http://evrostroy1.ru/img/sixth.jpg) center;
+    }
+
+    h2{
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 38px;
+    }
+
+    h6{
+        margin: 0;
+        margin-top: 16px;
+        text-transform: uppercase;     
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    p{
+        margin-top: 16px;
+        line-height: 23px;
+        color: #fff;
+        font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+
+.left-submenu{
+    max-width: 300px;
+}
+
+
+.read-more-button{
+    transition: all linear 0.2s 0.1s;
+    display: inline-block;
+    width: 146px;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background: #2b2d31;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover{
+        background: #f9f9f9;
+        color: #000;
+    }
+
+    &.hover-orange{
+        &:hover{
+            background: orange;
+            color: #fff;
+        }
+    }
+}
+
+
+.special-container{
+    h2, h6, p{
+        text-align: center
+    }
+}
+
+.md-button{
+    border-radius: 0 !important;
+}
+
+label, input, textarea{
+    color: #bdbdbd !important;
 }

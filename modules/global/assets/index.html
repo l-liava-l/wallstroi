@@ -19,78 +19,64 @@
 		<script type="text/javascript" src="vendor.js"></script>
 	    <script type="text/javascript" src="global.js"></script>
 	</head>
-	<body ng-controller="MainCtrl as main"  style="overflow-y: {{main.fixBody ? 'hidden' : 'auto'}}"  ng-cloak>
-		<md-toolbar class="md-primary fixed toolbar" layout="row" layout-align="center center">
-			<div style="margin-left: 40px">
-				<span style="padding: 20px; background-color: rgba(0,0,0,.2); text-transform: uppercase">
-					<md-icon md-svg-icon="img/icons/ic_landscape_24px.svg"></md-icon>
-					wallstroi
-				</span>
-			</div>
-			<div class="content-container" layout="row" layout-margin flex>
-				<div layout="row" layout-align="end center" layout-fill  layout-margin flex>
-					<md-button><a style="text-transform: none">О компании</a></md-button>
-					<md-button><a style="text-transform: none">Вакансии</a></md-button>
-					<md-button><a style="text-transform: none">Контакты</a></md-button>
-					<!--md-button class="md-icon-button">
-						<md-icon md-svg-icon="img/icons/ic_local_post_office_24px.svg"></md-icon>
-					</md-button-->
-				</div>
-			</div>
-		</md-toolbar>
-
-		<md-sidenav  md-is-locked-open="true" 
-					 class="md-sidenav-left md-whiteframe-z2" 
-					 style="height: 100%; position: fixed;" 
-					 md-component-id="left" layout="column">
-			<md-toolbar></md-toolbar>
-			<md-subheader class="md-primary">Навигация по услугам</md-subheader>
-			<md-content layout="column" layout-align="start center" flex>		
-				<md-list style="width: 100%" flex>
-					<md-list-item style="width: 100%;">
-						<md-button style="text-transform: none; width: 100%; margin: 0; padding-left: 40px; border-radius: 0;  text-align: left" layout="row">
-							<md-icon md-svg-icon="img/icons/ic_flip_to_front_24px.svg" style="margin-right: 3px;"></md-icon>
-							<a style="font-size: 16px">Укладка кафельной плитки</a>
-						</md-button>
-				 	</md-list-item>
-				 	<md-list-item style="width: 100%;">
-						<md-button style="text-transform: none; width: 100%; margin: 0; padding-left: 40px; border-radius: 0;  text-align: left" layout="row">
-							<md-icon md-svg-icon="img/icons/ic_dashboard_24px.svg"></md-icon>
-							<a style="font-size: 16px">Укладка тротуарной плитки</a>
-						</md-button>
-				 	</md-list-item>
-				 	<md-list-item style="width: 100%;">
-						<md-button style="text-transform: none; width: 100%; margin: 0;  padding-left: 40px;border-radius: 0;  text-align: left" layout="row">
-							<md-icon md-svg-icon="img/icons/ic_store_24px.svg"></md-icon>
-							<a style="font-size: 16px">Облицовка фасадов</a>
-						</md-button>
-				 	</md-list-item>
-				 	<md-list-item style="width: 100%;">
-						<md-button style="text-transform: none; width: 100%; margin: 0;  padding-left: 40px;border-radius: 0;  text-align: left" layout="row">
-							<md-icon md-svg-icon="img/icons/ic_theaters_24px.svg" style="transform: rotate(180deg)"></md-icon>
-							<a style="font-size: 16px">Асфальтирование </a>
-						</md-button>
-				 	</md-list-item>
-				</md-list>
-				<!--div style="border-top: 1px solid rgba(0, 0, 0, 0.1); width: 70%; margin: 30px"></div>
-				<div layout="column" style="padding: 10px 0 30px 30px">
-					<a style="color: #333; font-size: 24px">8(988) 188-11-68</a>
-					<span style="font-size: 14px; text-align: right; color: #2196F3">пн-пт 9 00 - 19 00</span>
-					<span style="font-size: 14px; text-align: right; color: #2196F3">сб-вс 9 00 - 16 00</span>
-				</div-->
-				<!--div layout="row" layout-align="center end">
-					<a>О компании</a>
-					<a>Контакты</a>
-				</div-->
-			</md-content>
-		</md-sidenav>
-		
-		 <div layout="row" layout-align="center center" flex>
-		 	<div style="max-width: 304px" flex></div>
-
-		 	<div layout="column" layout-align="center center" flex>
-		 		<img src="img/mountains.png">
-		 	</div>
-		</div>
+	<body ng-controller="MainCtrl as main" ng-cloak>
+		<ng-include src="'components/header/header.html'"></ng-include>
+		<div class="main-container" ui-view="content" flex></div>
 	</body>
 </html>
+			
+
+
+		 <!--div layout="row" layout-align="center center" flex>
+	<div  class="content-container" layout="column" layout-align="center center" flex></div>
+		<div layout="row" layout-align="center center" flex>
+	 		<div class="content-container services-container" layout="column" layout-align="center center" flex>
+	 			<a>Укладка кафельной плитки</a>
+	 			<a>Укладка тротуарной плитки</a>
+	 			<a>Облицовка фасадов</a>
+	 			<a>Асфальтирование поверхностей</a>
+	 		</div>
+		</div>
+	 		<div class="content-container" layout="row" layout-align="center center" flex>
+	 			<div class="left-submenu" flex>
+	 				<md-list>
+				      <md-list-item>Укладка кафельной плитки</md-list-item>
+				      <md-divider></md-divider>
+				    </md-list>
+				    <md-list>
+				      <md-list-item>Укладка тротуарной плитки</md-list-item>
+				      <md-divider></md-divider>
+				    </md-list>
+				    <md-list>
+				      <md-list-item>Облицовка фасадов</md-list-item>
+				      <md-divider></md-divider>
+				    </md-list>
+				    <md-list>
+				      <md-list-item>Асфальтирование поверхностей</md-list-item>
+				      <md-divider></md-divider>
+				    </md-list>
+				</div>
+	 			<div flex></div>
+	 		</div>
+		</div-->
+
+		 <!--div layout="row" layout-align="center center" flex>
+	 		<div class="content-container services-container" layout="row" layout-align="center center" flex>
+	 			<div layout="column" flex>
+	 				<md-whiteframe class="md-whiteframe-z1 service-tile" layout layout-align="center center">
+					    <span>Укладка кафельной плитки</span>
+					</md-whiteframe>
+					<md-whiteframe class="md-whiteframe-z1 service-tile slab" layout layout-align="center center">
+					    <span>Укладка тротуарной плитки</span>
+					</md-whiteframe>
+	 			</div>
+	 			<div layout="column" flex>
+	 				<md-whiteframe class="md-whiteframe-z1 service-tile" layout layout-align="center center">
+					    <span>Облицовка фасадов</span>
+					</md-whiteframe>
+					<md-whiteframe class="md-whiteframe-z1 service-tile" layout layout-align="center center">
+					    <span>Асфальтирование поверхностей</span>
+					</md-whiteframe>
+	 			</div>
+	 		</div>
+		</div-->

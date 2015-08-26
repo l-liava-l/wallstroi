@@ -13,7 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-material": "~0.10.0",
-    "material-design-icons": "~1.0.1"
+    "angular-material": "~0.10.1",
+    "material-design-icons": "~1.0.1",
+    "ui-router": "*"
   }
 }
